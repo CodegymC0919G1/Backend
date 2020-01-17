@@ -57,4 +57,7 @@ public class HoiNhom {
         this.soThanhVien = soThanhVien;
         this.soLanCanhCao = soLanCanhCao;
     }
+
+    public HoiNhom() {
+    }
 }
