@@ -6,10 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface BaiDangService {
-
     List<BaiDang> findAll();
-
     List<BaiDang> findByUser (int idUser);
-
 }
 

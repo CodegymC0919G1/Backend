@@ -4,12 +4,15 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="hoi_nhom")
+@Table(name = "hoi_nhom")
 public class HoiNhom {
     @Id
     @Column(name = "id_hoi_nhom")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idHoiNhom;
+    private Long idHoiNhom;
+
+    @Column(name = "ten_hoi_nhom")
+    private String tenHoiNhom;
 
     @Column(name = "ngay_thanh_lap")
     private Date ngayThanhLap;
@@ -23,12 +26,27 @@ public class HoiNhom {
     @Column(name = "so_lan_canh_cao")
     private int soLanCanhCao;
 
-    public int getIdHoiNhom() {
+    public HoiNhom(String tenHoiNhom, Date ngayThanhLap, int soThanhVien, int soLanCanhCao) {
+        this.tenHoiNhom = tenHoiNhom;
+        this.ngayThanhLap = ngayThanhLap;
+        this.soThanhVien = soThanhVien;
+        this.soLanCanhCao = soLanCanhCao;
+    }
+
+    public Long getIdHoiNhom() {
         return idHoiNhom;
     }
 
-    public void setIdHoiNhom(int idHoiNhom) {
+    public void setIdHoiNhom(Long idHoiNhom) {
         this.idHoiNhom = idHoiNhom;
+    }
+
+    public String getTenHoiNhom() {
+        return tenHoiNhom;
+    }
+
+    public void setTenHoiNhom(String tenHoiNhom) {
+        this.tenHoiNhom = tenHoiNhom;
     }
 
     public Date getNgayThanhLap() {
@@ -63,10 +81,7 @@ public class HoiNhom {
         this.soLanCanhCao = soLanCanhCao;
     }
 
-    public HoiNhom(Date ngayThanhLap, int soThanhVien, int soLanCanhCao) {
-        this.ngayThanhLap = ngayThanhLap;
-        this.soThanhVien = soThanhVien;
-        this.soLanCanhCao = soLanCanhCao;
+    public HoiNhom() {
     }
 
     public HoiNhom() {
