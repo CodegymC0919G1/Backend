@@ -25,6 +25,7 @@ public class ThuController {
 	}
 
 	//thêm mới
+	//duc add
 	@GetMapping("/taomoithu/{id}")
 	public Thu creatThu(@PathVariable("id") int id) {
 		return thuService.findById(id);
