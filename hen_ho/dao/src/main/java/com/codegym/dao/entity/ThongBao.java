@@ -41,11 +41,12 @@ public class ThongBao {
         this.thoiGianThongBao = thoiGianThongBao;
     }
 
+    public ThongBao() {
+    }
+
     public ThongBao(String noiDung, Date thoiGianThongBao) {
         this.noiDung = noiDung;
         this.thoiGianThongBao = thoiGianThongBao;
     }
 
-    public ThongBao() {
-    }
 }
