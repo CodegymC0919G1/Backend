@@ -18,6 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
+/dao/src/main/resources/application.properties
 
 ### NetBeans ###
 /nbproject/private/
@@ -29,9 +30,3 @@ build/
 
 ### VS Code ###
 .vscode/
-<<<<<<< HEAD
-/dao/src/main/resources/application.properties
-=======
-
-/dao/src/main/resources/application.properties
->>>>>>> 1246536e36c48a3951da2072b01aa21f93bb4113
