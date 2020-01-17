@@ -45,4 +45,7 @@ public class ThongBao {
         this.noiDung = noiDung;
         this.thoiGianThongBao = thoiGianThongBao;
     }
+
+    public ThongBao() {
+    }
 }

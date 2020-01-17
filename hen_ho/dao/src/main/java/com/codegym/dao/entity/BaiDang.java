@@ -95,4 +95,7 @@ public class BaiDang {
         this.thoiGianDang = thoiGianDang;
         this.thanhVienDang = thanhVienDang;
     }
+
+    public BaiDang() {
+    }
 }
