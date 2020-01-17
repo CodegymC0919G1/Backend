@@ -72,10 +72,4 @@ public class HoiNhom {
 
     public HoiNhom() {
     }
-
-    public HoiNhom(Date ngayThanhLap, int soThanhVien, int soLanCanhCao) {
-        this.ngayThanhLap = ngayThanhLap;
-        this.soThanhVien = soThanhVien;
-        this.soLanCanhCao = soLanCanhCao;
-    }
 }

@@ -28,7 +28,8 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-    private boolean tinhTrangHonNhan;
+  
+    private Boolean tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
     private String anhDaiDien;
@@ -120,15 +121,14 @@ public class ThanhVien {
         this.diaChi = diaChi;
     }
 
+    public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
 
     public boolean getTinhTrangHonNhan() {
         return tinhTrangHonNhan;
     }
 
-    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
-
 
     public String getAnhDaiDien() {
         return anhDaiDien;
@@ -186,11 +186,11 @@ public class ThanhVien {
         this.user = user;
     }
 
-
     public ThanhVien() {
     }
 
     public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, Integer xu, int luotThich, int trangThaiDangNhap, boolean khoa, User user) {
+
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
