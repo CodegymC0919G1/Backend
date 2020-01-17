@@ -76,6 +76,9 @@ public class BaoCao {
         this.thanhVienBiBaoCao = thanhVienBiBaoCao;
     }
 
+    public BaoCao() {
+    }
+
     public BaoCao(Date thoiGianBaoCao, String noiDung, boolean xuLy, ThanhVien thanhVienBaoCao, ThanhVien thanhVienBiBaoCao) {
         this.thoiGianBaoCao = thoiGianBaoCao;
         this.noiDung = noiDung;
@@ -83,4 +86,5 @@ public class BaoCao {
         this.thanhVienBaoCao = thanhVienBaoCao;
         this.thanhVienBiBaoCao = thanhVienBiBaoCao;
     }
+
 }

@@ -55,9 +55,13 @@ public class NhomThanhVien {
         this.hoiNhom = hoiNhom;
     }
 
+    public NhomThanhVien() {
+    }
+
     public NhomThanhVien(ThanhVien thanhVienAdmin, ThanhVien thanhVienHoiVien, HoiNhom hoiNhom) {
         this.thanhVienAdmin = thanhVienAdmin;
         this.thanhVienHoiVien = thanhVienHoiVien;
         this.hoiNhom = hoiNhom;
     }
+
 }

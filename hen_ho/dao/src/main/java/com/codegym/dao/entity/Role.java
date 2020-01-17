@@ -1,10 +1,13 @@
 package com.codegym.dao.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="role")
-public class Role {
+public class Role implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id_role")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +34,8 @@ public class Role {
 
     public Role(String roleName) {
         this.roleName = roleName;
+    }
+
+    public Role() {
     }
 }
