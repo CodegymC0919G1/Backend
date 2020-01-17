@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface BaiDangService {
-
     List<BaiDang> findAll();
 
     List<BaiDang> findByThanhVienDang(ThanhVien thanhVienDang);
@@ -15,5 +14,6 @@ public interface BaiDangService {
     BaiDang findByIdBaiDang(Integer idBaiDang);
 
     void save(BaiDang baiDang);
+
 }
 

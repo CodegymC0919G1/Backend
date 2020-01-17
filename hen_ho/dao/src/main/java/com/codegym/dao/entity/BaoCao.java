@@ -86,4 +86,5 @@ public class BaoCao {
         this.thanhVienBaoCao = thanhVienBaoCao;
         this.thanhVienBiBaoCao = thanhVienBiBaoCao;
     }
+
 }
