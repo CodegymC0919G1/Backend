@@ -1,19 +1,20 @@
 package com.codegym.dao.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="user")
-public class User {
+public class User implements Serializable {
     @Id
-    @Column(name = "id_user")
+    @Column(name = "id_user", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUser;
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", nullable = false, unique = true)
     private String userName;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
     public int getIdUser() {
@@ -43,5 +44,8 @@ public class User {
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
+    }
+
+    public User() {
     }
 }

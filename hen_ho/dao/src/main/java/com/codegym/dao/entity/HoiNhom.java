@@ -38,20 +38,20 @@ public class HoiNhom {
         this.idHoiNhom = idHoiNhom;
     }
 
-    public String getTenHoiNhom() {
-        return tenHoiNhom;
-    }
-
-    public void setTenHoiNhom(String tenHoiNhom) {
-        this.tenHoiNhom = tenHoiNhom;
-    }
-
     public Date getNgayThanhLap() {
         return ngayThanhLap;
     }
 
     public void setNgayThanhLap(Date ngayThanhLap) {
         this.ngayThanhLap = ngayThanhLap;
+    }
+
+    public String getTenHoiNhom() {
+        return tenHoiNhom;
+    }
+
+    public void setTenHoiNhom(String tenHoiNhom) {
+        this.tenHoiNhom = tenHoiNhom;
     }
 
     public int getSoThanhVien() {
