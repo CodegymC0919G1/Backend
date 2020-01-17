@@ -3,7 +3,6 @@ package com.codegym.dao.entity;
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name="thanh_vien")
@@ -49,10 +48,29 @@ public class ThanhVien {
     @Column(name = "khoa")
     private boolean khoa;
 
+    @Column(name = "muc_dich_tham_gia")
+    private String mucDichThamGia;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
 
+
+    public String getMucDichThamGia() {
+        return mucDichThamGia;
+    }
+
+    public void setMucDichThamGia(String mucDichThamGia) {
+        this.mucDichThamGia = mucDichThamGia;
+    }
+
+    public boolean isTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
+        this.tinhTrangHonNhan = tinhTrangHonNhan;
+    }
 
     public int getIdThanhVien() {
         return idThanhVien;
@@ -102,6 +120,7 @@ public class ThanhVien {
         this.diaChi = diaChi;
     }
 
+
     public boolean getTinhTrangHonNhan() {
         return tinhTrangHonNhan;
     }
@@ -109,6 +128,7 @@ public class ThanhVien {
     public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
+
 
     public String getAnhDaiDien() {
         return anhDaiDien;
@@ -166,6 +186,7 @@ public class ThanhVien {
         this.user = user;
     }
 
+
     public ThanhVien() {
     }
 
@@ -182,6 +203,7 @@ public class ThanhVien {
         this.luotThich = luotThich;
         this.trangThaiDangNhap = trangThaiDangNhap;
         this.khoa = khoa;
+        this.mucDichThamGia = mucDichThamGia;
         this.user = user;
     }
 
