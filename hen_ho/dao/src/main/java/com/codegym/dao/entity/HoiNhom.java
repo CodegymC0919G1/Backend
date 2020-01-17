@@ -20,6 +20,9 @@ public class HoiNhom {
     @Column(name = "so_thanh_vien")
     private int soThanhVien;
 
+    @Column(name = "ten_hoi_nhom")
+    private String tenHoiNhom;
+
     @Column(name = "so_lan_canh_cao")
     private int soLanCanhCao;
 
@@ -54,6 +57,14 @@ public class HoiNhom {
         this.ngayThanhLap = ngayThanhLap;
     }
 
+    public String getTenHoiNhom() {
+        return tenHoiNhom;
+    }
+
+    public void setTenHoiNhom(String tenHoiNhom) {
+        this.tenHoiNhom = tenHoiNhom;
+    }
+
     public int getSoThanhVien() {
         return soThanhVien;
     }
@@ -68,6 +79,9 @@ public class HoiNhom {
 
     public void setSoLanCanhCao(int soLanCanhCao) {
         this.soLanCanhCao = soLanCanhCao;
+    }
+
+    public HoiNhom() {
     }
 
     public HoiNhom() {

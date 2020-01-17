@@ -180,4 +180,7 @@ public class ThanhVien {
         this.khoa = khoa;
         this.user = user;
     }
+
+    public ThanhVien() {
+    }
 }

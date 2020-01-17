@@ -110,4 +110,7 @@ public class BaiDang {
 
     public BaiDang() {
     }
+
+    public BaiDang() {
+    }
 }
