@@ -87,6 +87,9 @@ public class BaiDang {
         this.thanhVienDang = thanhVienDang;
     }
 
+    public BaiDang() {
+    }
+
     public BaiDang(String tieuDe, String anh, String noiDung, boolean xoa, Date thoiGianDang, ThanhVien thanhVienDang) {
         this.tieuDe = tieuDe;
         this.anh = anh;
