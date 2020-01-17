@@ -47,4 +47,7 @@ public class ThongBaoThanhVien {
         this.thanhVienThongBao = thanhVienThongBao;
         this.thongBao = thongBao;
     }
+
+    public ThongBaoThanhVien() {
+    }
 }

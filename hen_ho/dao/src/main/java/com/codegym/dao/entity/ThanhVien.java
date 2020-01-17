@@ -54,8 +54,6 @@ public class ThanhVien {
     @JoinColumn(name = "id_user")
     private User user;
 
-    public ThanhVien() {
-    }
 
     public String getMucDichThamGia() {
         return mucDichThamGia;
@@ -196,5 +194,8 @@ public class ThanhVien {
         this.khoa = khoa;
         this.mucDichThamGia = mucDichThamGia;
         this.user = user;
+    }
+
+    public ThanhVien() {
     }
 }
