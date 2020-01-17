@@ -100,14 +100,22 @@ public class BaiDang {
         this.thanhVienDang = thanhVienDang;
     }
 
+    public BaiDang() {
+    }
+
+    public BaiDang(String tieuDe, String anh, String noiDung, boolean xoa, Date thoiGianDang, ThanhVien thanhVienDang) {
+        this.tieuDe = tieuDe;
+        this.anh = anh;
+        this.noiDung = noiDung;
+        this.xoa = xoa;
+        this.thoiGianDang = thoiGianDang;
+        this.thanhVienDang = thanhVienDang;
+    }
     public HoiNhom getIdHoiNhom() {
         return idHoiNhom;
     }
 
     public void setIdHoiNhom(HoiNhom idHoiNhom) {
         this.idHoiNhom = idHoiNhom;
-    }
-
-    public BaiDang() {
     }
 }
