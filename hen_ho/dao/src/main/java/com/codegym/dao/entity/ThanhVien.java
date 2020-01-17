@@ -2,7 +2,6 @@ package com.codegym.dao.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name="thanh_vien")
@@ -28,7 +27,7 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-    private String tinhTrangHonNhan;
+    private boolean tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
     private String anhDaiDien;
@@ -48,10 +47,31 @@ public class ThanhVien {
     @Column(name = "khoa")
     private boolean khoa;
 
+    @Column(name = "muc_dich_tham_gia")
+    private String mucDichThamGia;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
 
+    public ThanhVien() {
+    }
+
+    public String getMucDichThamGia() {
+        return mucDichThamGia;
+    }
+
+    public void setMucDichThamGia(String mucDichThamGia) {
+        this.mucDichThamGia = mucDichThamGia;
+    }
+
+    public boolean isTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
+        this.tinhTrangHonNhan = tinhTrangHonNhan;
+    }
 
     public int getIdThanhVien() {
         return idThanhVien;
@@ -99,14 +119,6 @@ public class ThanhVien {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
-    }
-
-    public String getTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
-    }
-
-    public void setTinhTrangHonNhan(String tinhTrangHonNhan) {
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
     public String getAnhDaiDien() {
@@ -165,7 +177,11 @@ public class ThanhVien {
         this.user = user;
     }
 
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, User user) {
+    public ThanhVien(boolean tinhTrangHonNhan) {
+        this.tinhTrangHonNhan = tinhTrangHonNhan;
+    }
+
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, User user) {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
@@ -178,6 +194,7 @@ public class ThanhVien {
         this.luotThich = luotThich;
         this.trangThaiDangNhap = trangThaiDangNhap;
         this.khoa = khoa;
+        this.mucDichThamGia = mucDichThamGia;
         this.user = user;
     }
 }
