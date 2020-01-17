@@ -17,6 +17,9 @@ public class User implements Serializable {
     @Column(name = "password", nullable = false)
     private String password;
 
+    public User() {
+    }
+
     public int getIdUser() {
         return idUser;
     }
@@ -46,6 +49,4 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User() {
-    }
 }
