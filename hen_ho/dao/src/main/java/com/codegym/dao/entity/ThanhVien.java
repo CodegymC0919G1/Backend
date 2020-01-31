@@ -123,13 +123,11 @@ public class ThanhVien {
 
     public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
 
+        this.tinhTrangHonNhan = tinhTrangHonNhan;
+    }
     public boolean getTinhTrangHonNhan() {
         return tinhTrangHonNhan;
     }
-
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
-    }
-
     public String getAnhDaiDien() {
         return anhDaiDien;
     }
