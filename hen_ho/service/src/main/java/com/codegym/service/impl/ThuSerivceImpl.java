@@ -19,12 +19,21 @@ public class ThuSerivceImpl implements ThuService {
 	}
 
 	@Override
-	public void deleteThu(int idThu) {
+	public void delete(int idThu) {
+		thuRepository.deleteById(idThu);
+	}
 
+
+
+
+	@Override
+	public Thu findById(int idThu) {
+		return thuRepository.findById(idThu).orElse(null);
 	}
 
 	@Override
-	public void getThu(int idThu) {
-
+	public Void save(Thu thu) {
+		thuRepository.save(thu);
+		return null;
 	}
 }
