@@ -11,7 +11,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaAuditing()
 @ComponentScan("com.codegym")
 @SpringBootApplication
-
 @EntityScan("com.codegym.dao.entity")
 public class WebServiceApplication {
 
