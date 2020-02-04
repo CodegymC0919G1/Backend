@@ -27,7 +27,7 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-    private boolean tinhTrangHonNhan;
+    private String tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
     private String anhDaiDien;
@@ -37,6 +37,7 @@ public class ThanhVien {
 
     @Column(name = "xu")
     private int xu;
+
 
     @Column(name = "luot_thich")
     private int luotThich;
@@ -50,25 +51,32 @@ public class ThanhVien {
     @Column(name = "muc_dich_tham_gia")
     private String mucDichThamGia;
 
+    @Column(name = "nghe_nghiep")
+    private String ngheNghiep;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
 
-
-    public String getMucDichThamGia() {
-        return mucDichThamGia;
+    public ThanhVien() {
     }
 
-    public void setMucDichThamGia(String mucDichThamGia) {
-        this.mucDichThamGia = mucDichThamGia;
-    }
-
-    public boolean isTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
-    }
-
-    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
+        this.hoTen = hoTen;
+        this.gioiTinh = gioiTinh;
+        this.ngaySinh = ngaySinh;
+        this.email = email;
+        this.diaChi = diaChi;
         this.tinhTrangHonNhan = tinhTrangHonNhan;
+        this.anhDaiDien = anhDaiDien;
+        this.soLanCanhcao = soLanCanhcao;
+        this.xu = xu;
+        this.luotThich = luotThich;
+        this.trangThaiDangNhap = trangThaiDangNhap;
+        this.khoa = khoa;
+        this.mucDichThamGia = mucDichThamGia;
+        this.ngheNghiep = ngheNghiep;
+        this.user = user;
     }
 
     public int getIdThanhVien() {
@@ -119,6 +127,14 @@ public class ThanhVien {
         this.diaChi = diaChi;
     }
 
+    public String getTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+    public void setTinhTrangHonNhan(String tinhTrangHonNhan) {
+        this.tinhTrangHonNhan = tinhTrangHonNhan;
+    }
+
     public String getAnhDaiDien() {
         return anhDaiDien;
     }
@@ -167,6 +183,22 @@ public class ThanhVien {
         this.khoa = khoa;
     }
 
+    public String getMucDichThamGia() {
+        return mucDichThamGia;
+    }
+
+    public void setMucDichThamGia(String mucDichThamGia) {
+        this.mucDichThamGia = mucDichThamGia;
+    }
+
+    public String getNgheNghiep() {
+        return ngheNghiep;
+    }
+
+    public void setNgheNghiep(String ngheNghiep) {
+        this.ngheNghiep = ngheNghiep;
+    }
+
     public User getUser() {
         return user;
     }
@@ -175,27 +207,25 @@ public class ThanhVien {
         this.user = user;
     }
 
-    public ThanhVien(boolean tinhTrangHonNhan) {
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
-    }
-
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, User user) {
-        this.hoTen = hoTen;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.email = email;
-        this.diaChi = diaChi;
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
-        this.anhDaiDien = anhDaiDien;
-        this.soLanCanhcao = soLanCanhcao;
-        this.xu = xu;
-        this.luotThich = luotThich;
-        this.trangThaiDangNhap = trangThaiDangNhap;
-        this.khoa = khoa;
-        this.mucDichThamGia = mucDichThamGia;
-        this.user = user;
-    }
-
-    public ThanhVien() {
+    @Override
+    public String toString() {
+        return "ThanhVien{" +
+                "idThanhVien=" + idThanhVien +
+                ", hoTen='" + hoTen + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", email='" + email + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", tinhTrangHonNhan='" + tinhTrangHonNhan + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", soLanCanhcao=" + soLanCanhcao +
+                ", xu=" + xu +
+                ", luotThich=" + luotThich +
+                ", trangThaiDangNhap=" + trangThaiDangNhap +
+                ", khoa=" + khoa +
+                ", mucDichThamGia='" + mucDichThamGia + '\'' +
+                ", ngheNghiep='" + ngheNghiep + '\'' +
+                ", user=" + user +
+                '}';
     }
 }
