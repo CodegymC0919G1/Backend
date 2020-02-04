@@ -107,6 +107,7 @@ public class ThanhVien {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
+
     public String getAnhDaiDien() {
         return anhDaiDien;
     }
@@ -163,10 +164,12 @@ public class ThanhVien {
         this.user = user;
     }
 
+
     public ThanhVien() {
     }
 
     public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, Boolean tinhTrangHonNhan, String anhDaiDien, Integer soLanCanhcao, Integer xu, Integer luotThich, Integer trangThaiDangNhap, boolean khoa, User user) {
+
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;

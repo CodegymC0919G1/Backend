@@ -35,8 +35,6 @@ public class HoiNhom {
        // this.nhomThanhViens = nhomThanhViens;
     }
 
-    public HoiNhom() {
-    }
 
     public Long getIdHoiNhom() {
         return idHoiNhom;
@@ -85,4 +83,8 @@ public class HoiNhom {
 //    public void setNhomThanhViens(List<NhomThanhVien> nhomThanhViens) {
 //        this.nhomThanhViens = nhomThanhViens;
 //    }
+    public HoiNhom() {
+    }
+
+
 }
