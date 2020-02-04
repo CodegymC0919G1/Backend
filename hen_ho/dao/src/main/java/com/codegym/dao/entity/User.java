@@ -2,10 +2,13 @@ package com.codegym.dao.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name="user")
-public class User implements Serializable {
+public class User {
+//    private static final long serialVersionUID = 1L;
+
     @Id
     @Column(name = "id_user", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +19,22 @@ public class User implements Serializable {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "id_user"),
+            inverseJoinColumns = @JoinColumn(name = "id_role")
+    )
+    private Set<Role> roles;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public User() {
     }
@@ -44,9 +63,5 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public User(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
 
 }

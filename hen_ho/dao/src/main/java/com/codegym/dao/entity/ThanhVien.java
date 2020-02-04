@@ -107,7 +107,6 @@ public class ThanhVien {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
-
     public String getAnhDaiDien() {
         return anhDaiDien;
     }
