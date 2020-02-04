@@ -120,7 +120,6 @@ public class ThanhVien {
         this.diaChi = diaChi;
     }
 
-
     public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
@@ -183,6 +182,8 @@ public class ThanhVien {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, Boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, User user) {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
