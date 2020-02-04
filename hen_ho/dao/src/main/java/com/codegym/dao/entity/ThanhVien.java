@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name="thanh_vien")
+@Table(name = "thanh_vien")
 public class ThanhVien {
     @Id
     @Column(name = "id_thanh_vien")
@@ -27,23 +27,24 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-    private String tinhTrangHonNhan;
+
+    private Boolean tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
     private String anhDaiDien;
 
     @Column(name = "so_lan_canh_cao")
-    private int soLanCanhcao;
+    private Integer soLanCanhcao;
 
     @Column(name = "xu")
-    private int xu;
+    private Integer xu;
 
 
     @Column(name = "luot_thich")
-    private int luotThich;
+    private Integer luotThich;
 
     @Column(name = "trang_thai_dang_nhap")
-    private int trangThaiDangNhap;
+    private Integer trangThaiDangNhap;
 
     @Column(name = "khoa")
     private boolean khoa;
@@ -127,11 +128,11 @@ public class ThanhVien {
         this.diaChi = diaChi;
     }
 
-    public String getTinhTrangHonNhan() {
+    public Boolean getTinhTrangHonNhan() {
         return tinhTrangHonNhan;
     }
 
-    public void setTinhTrangHonNhan(String tinhTrangHonNhan) {
+    public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
@@ -143,35 +144,35 @@ public class ThanhVien {
         this.anhDaiDien = anhDaiDien;
     }
 
-    public int getSoLanCanhcao() {
+    public Integer getSoLanCanhcao() {
         return soLanCanhcao;
     }
 
-    public void setSoLanCanhcao(int soLanCanhcao) {
+    public void setSoLanCanhcao(Integer soLanCanhcao) {
         this.soLanCanhcao = soLanCanhcao;
     }
 
-    public int getXu() {
+    public Integer getXu() {
         return xu;
     }
 
-    public void setXu(int xu) {
+    public void setXu(Integer xu) {
         this.xu = xu;
     }
 
-    public int getLuotThich() {
+    public Integer getLuotThich() {
         return luotThich;
     }
 
-    public void setLuotThich(int luotThich) {
+    public void setLuotThich(Integer luotThich) {
         this.luotThich = luotThich;
     }
 
-    public int getTrangThaiDangNhap() {
+    public Integer getTrangThaiDangNhap() {
         return trangThaiDangNhap;
     }
 
-    public void setTrangThaiDangNhap(int trangThaiDangNhap) {
+    public void setTrangThaiDangNhap(Integer trangThaiDangNhap) {
         this.trangThaiDangNhap = trangThaiDangNhap;
     }
 
@@ -229,3 +230,5 @@ public class ThanhVien {
                 '}';
     }
 }
+}
+

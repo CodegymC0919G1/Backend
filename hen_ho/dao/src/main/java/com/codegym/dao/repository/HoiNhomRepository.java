@@ -7,6 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface HoiNhomRepository extends JpaRepository<HoiNhom,Long> {
-    Iterable<NhomThanhVien> findAllByIdHoiNhom(HoiNhom hoiNhom);
 }
 
