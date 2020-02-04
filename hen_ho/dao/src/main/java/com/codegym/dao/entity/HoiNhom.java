@@ -70,7 +70,6 @@ public class HoiNhom {
         this.soLanCanhCao = soLanCanhCao;
     }
 
-
     public HoiNhom() {
     }
 }
