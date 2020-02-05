@@ -1,49 +1,18 @@
-package com.codegym.dao.entity;
-
-import javax.persistence.*;
+package com.codegym.dao.DTO;
 import java.sql.Date;
-import java.util.Base64;
+import com.codegym.dao.entity.HoiNhom;
+import com.codegym.dao.entity.ThanhVien;
 
-@Entity
-@Table(name="bai_dang")
-public class BaiDang {
+public class BaiDangDTO {
 
-    @Id
-    @Column(name = "id_bai_dang")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idBaiDang;
-
-    @Column(name = "tieu_de")
     private String tieuDe;
-
-    @Column(name = "anh")
     private String anh;
-
-    @Column(name = "noi_dung")
     private String noiDung;
-
-    @Column(name = "xoa")
     private boolean xoa;
-
-    @Column(name = "thoi_gian_dang")
     private Date thoiGianDang;
-
-    @ManyToOne
-    @JoinColumn(name = "id_nguoi_dang")
     private ThanhVien thanhVienDang;
-    @ManyToOne
-    @JoinColumn(name = "id_hoi_nhom")
     private HoiNhom idHoiNhom;
-
-    public BaiDang(String tieuDe, String anh, String noiDung, boolean xoa, Date thoiGianDang, ThanhVien thanhVienDang, HoiNhom idHoiNhom) {
-        this.tieuDe = tieuDe;
-        this.anh = anh;
-        this.noiDung = noiDung;
-        this.xoa = xoa;
-        this.thoiGianDang = thoiGianDang;
-        this.thanhVienDang = thanhVienDang;
-        this.idHoiNhom = idHoiNhom;
-    }
 
     public int getIdBaiDang() {
         return idBaiDang;
@@ -101,8 +70,6 @@ public class BaiDang {
         this.thanhVienDang = thanhVienDang;
     }
 
-    public BaiDang() {
-    }
     public HoiNhom getIdHoiNhom() {
         return idHoiNhom;
     }
@@ -110,5 +77,7 @@ public class BaiDang {
     public void setIdHoiNhom(HoiNhom idHoiNhom) {
         this.idHoiNhom = idHoiNhom;
     }
-
+    public BaiDangDTO() {
+        //contrutor
+    }
 }
