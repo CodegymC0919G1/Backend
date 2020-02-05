@@ -2,6 +2,7 @@ package com.codegym.dao.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "hoi_nhom")
@@ -23,12 +24,17 @@ public class HoiNhom {
     @Column(name = "so_lan_canh_cao")
     private int soLanCanhCao;
 
+//    @OneToMany(targetEntity = NhomThanhVien.class)
+//    private List<NhomThanhVien> nhomThanhViens;
+
     public HoiNhom(String tenHoiNhom, Date ngayThanhLap, int soThanhVien, int soLanCanhCao) {
         this.tenHoiNhom = tenHoiNhom;
         this.ngayThanhLap = ngayThanhLap;
         this.soThanhVien = soThanhVien;
         this.soLanCanhCao = soLanCanhCao;
+       // this.nhomThanhViens = nhomThanhViens;
     }
+
 
     public Long getIdHoiNhom() {
         return idHoiNhom;
@@ -38,20 +44,20 @@ public class HoiNhom {
         this.idHoiNhom = idHoiNhom;
     }
 
-    public Date getNgayThanhLap() {
-        return ngayThanhLap;
-    }
-
-    public void setNgayThanhLap(Date ngayThanhLap) {
-        this.ngayThanhLap = ngayThanhLap;
-    }
-
     public String getTenHoiNhom() {
         return tenHoiNhom;
     }
 
     public void setTenHoiNhom(String tenHoiNhom) {
         this.tenHoiNhom = tenHoiNhom;
+    }
+
+    public Date getNgayThanhLap() {
+        return ngayThanhLap;
+    }
+
+    public void setNgayThanhLap(Date ngayThanhLap) {
+        this.ngayThanhLap = ngayThanhLap;
     }
 
     public int getSoThanhVien() {

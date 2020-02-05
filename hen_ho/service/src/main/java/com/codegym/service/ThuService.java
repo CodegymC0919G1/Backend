@@ -6,6 +6,10 @@ import java.util.List;
 
 public interface ThuService {
 	List<Thu> getAllThu();
-	void deleteThu(int idThu);
-	void getThu(int idThu);
+
+	void delete(int idThu);
+
+	Thu findById(int idThu);
+
+	Void save(Thu thu);
 }

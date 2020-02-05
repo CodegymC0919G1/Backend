@@ -7,5 +7,5 @@ import java.util.List;
 public interface ThanhVienService {
     List<ThanhVien> getThanhVien();
     ThanhVien saveThanhVien(ThanhVien thanhVien);
-    ThanhVien getThanhVienById(int id);
+    ThanhVien getThanhVienById(Long id);
 }
