@@ -28,23 +28,22 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-  
-    private Boolean tinhTrangHonNhan;
+    private boolean tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
     private String anhDaiDien;
 
     @Column(name = "so_lan_canh_cao")
-    private Integer soLanCanhcao;
+    private int soLanCanhcao;
 
     @Column(name = "xu")
-    private Integer xu;
+    private int xu;
 
     @Column(name = "luot_thich")
-    private Integer luotThich;
+    private int luotThich;
 
     @Column(name = "trang_thai_dang_nhap")
-    private Integer trangThaiDangNhap;
+    private int trangThaiDangNhap;
 
     @Column(name = "khoa")
     private boolean khoa;
@@ -121,13 +120,6 @@ public class ThanhVien {
         this.diaChi = diaChi;
     }
 
-    public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
-
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
-    }
-    public boolean getTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
-    }
     public String getAnhDaiDien() {
         return anhDaiDien;
     }
@@ -136,35 +128,35 @@ public class ThanhVien {
         this.anhDaiDien = anhDaiDien;
     }
 
-    public Integer getSoLanCanhcao() {
+    public int getSoLanCanhcao() {
         return soLanCanhcao;
     }
 
-    public void setSoLanCanhcao(Integer soLanCanhcao) {
+    public void setSoLanCanhcao(int soLanCanhcao) {
         this.soLanCanhcao = soLanCanhcao;
     }
 
-    public Integer getXu() {
+    public int getXu() {
         return xu;
     }
 
-    public void setXu(Integer xu) {
+    public void setXu(int xu) {
         this.xu = xu;
     }
 
-    public Integer getLuotThich() {
+    public int getLuotThich() {
         return luotThich;
     }
 
-    public void setLuotThich(Integer luotThich) {
+    public void setLuotThich(int luotThich) {
         this.luotThich = luotThich;
     }
 
-    public Integer getTrangThaiDangNhap() {
+    public int getTrangThaiDangNhap() {
         return trangThaiDangNhap;
     }
 
-    public void setTrangThaiDangNhap(Integer trangThaiDangNhap) {
+    public void setTrangThaiDangNhap(int trangThaiDangNhap) {
         this.trangThaiDangNhap = trangThaiDangNhap;
     }
 
@@ -185,24 +177,6 @@ public class ThanhVien {
     }
 
     public ThanhVien() {
-    }
-
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, Integer xu, int luotThich, int trangThaiDangNhap, boolean khoa, User user) {
-
-        this.hoTen = hoTen;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.email = email;
-        this.diaChi = diaChi;
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
-        this.anhDaiDien = anhDaiDien;
-        this.soLanCanhcao = soLanCanhcao;
-        this.xu = xu;
-        this.luotThich = luotThich;
-        this.trangThaiDangNhap = trangThaiDangNhap;
-        this.khoa = khoa;
-        this.mucDichThamGia = mucDichThamGia;
-        this.user = user;
     }
 
 }

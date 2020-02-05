@@ -30,6 +30,7 @@ public class BaiDang {
     @ManyToOne
     @JoinColumn(name = "id_nguoi_dang")
     private ThanhVien thanhVienDang;
+
     @ManyToOne
     @JoinColumn(name = "id_hoi_nhom")
     private HoiNhom idHoiNhom;
@@ -103,14 +104,6 @@ public class BaiDang {
     public BaiDang() {
     }
 
-    public BaiDang(String tieuDe, String anh, String noiDung, boolean xoa, Date thoiGianDang, ThanhVien thanhVienDang) {
-        this.tieuDe = tieuDe;
-        this.anh = anh;
-        this.noiDung = noiDung;
-        this.xoa = xoa;
-        this.thoiGianDang = thoiGianDang;
-        this.thanhVienDang = thanhVienDang;
-    }
     public HoiNhom getIdHoiNhom() {
         return idHoiNhom;
     }
