@@ -1,5 +1,6 @@
 package com.codegym.service.impl;
 
+import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.entity.Thu;
 import com.codegym.service.ThuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,17 @@ public class ThuSerivceImpl implements ThuService {
 	}
 
 	@Override
-	public Void save(Thu thu) {
+	public void save(Thu thu) {
 		thuRepository.save(thu);
-		return null;
+	}
+
+	@Override
+	public List<Thu>  findThanhVienGui(ThanhVien thanhVien) {
+		return thuRepository.findAllByThanhVienGui(thanhVien);
+	}
+
+	@Override
+	public List<Thu> findThanhVienNhan(ThanhVien thanhVien) {
+		return thuRepository.findAllByThanhVienNhan(thanhVien);
 	}
 }

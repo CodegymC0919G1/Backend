@@ -9,7 +9,7 @@ public class ThanhVien {
     @Id
     @Column(name = "id_thanh_vien")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idThanhVien;
+    private long idThanhVien;
 
     @Column(name = "ho_ten")
     private String hoTen;
@@ -31,7 +31,7 @@ public class ThanhVien {
     private Boolean tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
-    private String anhDaiDien;
+    private byte[] anhDaiDien;
 
     @Column(name = "so_lan_canh_cao")
     private Integer soLanCanhcao;
@@ -62,29 +62,12 @@ public class ThanhVien {
     public ThanhVien() {
     }
 
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
-        this.hoTen = hoTen;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.email = email;
-        this.diaChi = diaChi;
-        this.tinhTrangHonNhan = tinhTrangHonNhan;
-        this.anhDaiDien = anhDaiDien;
-        this.soLanCanhcao = soLanCanhcao;
-        this.xu = xu;
-        this.luotThich = luotThich;
-        this.trangThaiDangNhap = trangThaiDangNhap;
-        this.khoa = khoa;
-        this.mucDichThamGia = mucDichThamGia;
-        this.ngheNghiep = ngheNghiep;
-        this.user = user;
-    }
 
-    public int getIdThanhVien() {
+    public long getIdThanhVien() {
         return idThanhVien;
     }
 
-    public void setIdThanhVien(int idThanhVien) {
+    public void setIdThanhVien(long idThanhVien) {
         this.idThanhVien = idThanhVien;
     }
 
@@ -136,11 +119,11 @@ public class ThanhVien {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
-    public String getAnhDaiDien() {
+    public byte[] getAnhDaiDien() {
         return anhDaiDien;
     }
 
-    public void setAnhDaiDien(String anhDaiDien) {
+    public void setAnhDaiDien(byte[] anhDaiDien) {
         this.anhDaiDien = anhDaiDien;
     }
 
@@ -230,5 +213,5 @@ public class ThanhVien {
                 '}';
     }
 }
-}
+
 
