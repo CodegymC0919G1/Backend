@@ -1,15 +1,26 @@
 package com.codegym.dao.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Arrays;
 
+
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name="thanh_vien")
 public class ThanhVien {
     @Id
     @Column(name = "id_thanh_vien")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idThanhVien;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idThanhVien;
 
     @Column(name = "ho_ten")
     private String hoTen;
@@ -29,15 +40,15 @@ public class ThanhVien {
     @Column(name = "tinh_trang_hon_nhan")
     private String tinhTrangHonNhan;
 
+    @Lob
     @Column(name = "anh_dai_dien")
-    private String anhDaiDien;
+    private byte[] anhDaiDien;
 
     @Column(name = "so_lan_canh_cao")
     private int soLanCanhcao;
 
     @Column(name = "xu")
     private int xu;
-
 
     @Column(name = "luot_thich")
     private int luotThich;
@@ -58,10 +69,7 @@ public class ThanhVien {
     @JoinColumn(name = "id_user")
     private User user;
 
-    public ThanhVien() {
-    }
-
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, byte[] anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
@@ -79,11 +87,11 @@ public class ThanhVien {
         this.user = user;
     }
 
-    public int getIdThanhVien() {
+    public Long getIdThanhVien() {
         return idThanhVien;
     }
 
-    public void setIdThanhVien(int idThanhVien) {
+    public void setIdThanhVien(Long idThanhVien) {
         this.idThanhVien = idThanhVien;
     }
 
@@ -135,11 +143,11 @@ public class ThanhVien {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
-    public String getAnhDaiDien() {
+    public byte[] getAnhDaiDien() {
         return anhDaiDien;
     }
 
-    public void setAnhDaiDien(String anhDaiDien) {
+    public void setAnhDaiDien(byte[] anhDaiDien) {
         this.anhDaiDien = anhDaiDien;
     }
 
@@ -217,7 +225,7 @@ public class ThanhVien {
                 ", email='" + email + '\'' +
                 ", diaChi='" + diaChi + '\'' +
                 ", tinhTrangHonNhan='" + tinhTrangHonNhan + '\'' +
-                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", anhDaiDien=" + Arrays.toString(anhDaiDien) +
                 ", soLanCanhcao=" + soLanCanhcao +
                 ", xu=" + xu +
                 ", luotThich=" + luotThich +
