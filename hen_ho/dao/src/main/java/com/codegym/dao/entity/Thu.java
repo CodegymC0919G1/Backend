@@ -98,6 +98,9 @@ public class Thu {
         this.thanhVienGui = thanhVienGui;
     }
 
+    public Thu() {
+    }
+
     public Thu(String tieuDe, String noiDung, Date thoiGianGui, boolean xem, boolean xoa, ThanhVien thanhVienNhan, ThanhVien thanhVienGui) {
         this.tieuDe = tieuDe;
         this.noiDung = noiDung;
@@ -108,6 +111,4 @@ public class Thu {
         this.thanhVienGui = thanhVienGui;
     }
 
-    public Thu() {
-    }
 }

@@ -1,7 +1,11 @@
 package com.codegym.web_service.controller;
 
+import com.codegym.dao.DTO.DetailNhomThanhVienDTO;
 import com.codegym.dao.entity.HoiNhom;
+
 import com.codegym.service.HoiNhomService;
+
+import com.codegym.service.NhomThanhVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,12 +16,18 @@ import java.util.List;
 public class HoiNhomController {
     @Autowired
     private HoiNhomService hoiNhomService;
-
+    @Autowired
+    private NhomThanhVienService nhomThanhVienService;
     @GetMapping("/hoinhom")
     public List<HoiNhom> listAllHoiNhom() {
         return hoiNhomService.findAll();
     }
 
+    @GetMapping("/hoinhom/nhomthanhvien/{id}")
+    public List<DetailNhomThanhVienDTO> getNhomThanhVien(@PathVariable("id") long id) {
+        HoiNhom hoiNhom=hoiNhomService.findById(id);
+        return nhomThanhVienService.findAllByHoiNhom(hoiNhom);
+    }
     //-------------------Retrieve Single hoinhom--------------------------------------------------------
 
     @GetMapping("/hoinhom/{id}")
@@ -36,18 +46,12 @@ public class HoiNhomController {
 
     @PatchMapping("/hoinhom/capnhathoinhom/{id}")
     public HoiNhom updateHoiNhom(@PathVariable("id") long id, @RequestBody HoiNhom hoiNhom) {
-//        System.out.println("Updating Customer " + id);
         HoiNhom currentHoiNhom = hoiNhomService.findById(id);
-        if (currentHoiNhom == null) {
-            System.out.println("hoinhom with id " + id + " not found");
-        }
-
         currentHoiNhom.setIdHoiNhom(hoiNhom.getIdHoiNhom());
         currentHoiNhom.setTenHoiNhom(hoiNhom.getTenHoiNhom());
         currentHoiNhom.setNgayThanhLap(hoiNhom.getNgayThanhLap());
         currentHoiNhom.setSoLanCanhCao(hoiNhom.getSoLanCanhCao());
         currentHoiNhom.setSoThanhVien(hoiNhom.getSoThanhVien());
-
         hoiNhomService.save(currentHoiNhom);
         return currentHoiNhom;
     }
@@ -56,12 +60,13 @@ public class HoiNhomController {
 
     @DeleteMapping("/hoinhom/xoahoinhom/{id}")
     public void deletehoinhom(@PathVariable("id") long id) {
-//        System.out.println("Fetching & Deleting hoinhom with id " + id);
-
-        HoiNhom hoiNhom = hoiNhomService.findById(id);
-        if (hoiNhom == null) {
-            System.out.println("Unable to delete. hoi nhom with id " + id + " not found");
-        }
         hoiNhomService.remove(id);
+    }
+    @PatchMapping("/hoinhom/capnhatcanhcao/{id}")
+    public HoiNhom updateSoLanCanhCao(@PathVariable("id") long id, @RequestBody HoiNhom hoiNhom) {
+        HoiNhom currentHoiNhom = hoiNhomService.findById(id);
+        currentHoiNhom.setSoLanCanhCao(hoiNhom.getSoLanCanhCao());
+        hoiNhomService.save(currentHoiNhom);
+        return currentHoiNhom;
     }
 }

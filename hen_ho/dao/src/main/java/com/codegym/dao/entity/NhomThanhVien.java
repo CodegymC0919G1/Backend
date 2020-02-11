@@ -9,7 +9,7 @@ public class NhomThanhVien {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "id_admin_nhom")
@@ -23,11 +23,11 @@ public class NhomThanhVien {
     @JoinColumn(name = "id_hoi_nhom")
     private HoiNhom hoiNhom;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -55,12 +55,13 @@ public class NhomThanhVien {
         this.hoiNhom = hoiNhom;
     }
 
+    public NhomThanhVien() {
+    }
+
     public NhomThanhVien(ThanhVien thanhVienAdmin, ThanhVien thanhVienHoiVien, HoiNhom hoiNhom) {
         this.thanhVienAdmin = thanhVienAdmin;
         this.thanhVienHoiVien = thanhVienHoiVien;
         this.hoiNhom = hoiNhom;
     }
 
-    public NhomThanhVien() {
-    }
 }

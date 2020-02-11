@@ -2,11 +2,12 @@ package com.codegym.dao.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(name="role")
-public class Role implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Role {
+//    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id_role")
@@ -15,6 +16,9 @@ public class Role implements Serializable {
 
     @Column(name = "role_name")
     private String roleName;
+
+    @ManyToMany(mappedBy = "roles")
+    private Set<User> users;
 
     public int getIdRole() {
         return idRole;
@@ -32,8 +36,12 @@ public class Role implements Serializable {
         this.roleName = roleName;
     }
 
-    public Role(String roleName) {
-        this.roleName = roleName;
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 
     public Role() {
