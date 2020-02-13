@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Date;
-import java.util.Arrays;
 
 
 @AllArgsConstructor
@@ -37,23 +37,25 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-    private String tinhTrangHonNhan;
+
+    private boolean tinhTrangHonNhan;
 
     @Lob
     @Column(name = "anh_dai_dien")
     private byte[] anhDaiDien;
 
     @Column(name = "so_lan_canh_cao")
-    private int soLanCanhcao;
+    private Integer soLanCanhcao;
 
     @Column(name = "xu")
-    private int xu;
+    private Integer xu;
+
 
     @Column(name = "luot_thich")
-    private int luotThich;
+    private Integer luotThich;
 
     @Column(name = "trang_thai_dang_nhap")
-    private int trangThaiDangNhap;
+    private Integer trangThaiDangNhap;
 
     @Column(name = "khoa")
     private boolean khoa;
@@ -64,11 +66,17 @@ public class ThanhVien {
     @Column(name = "nghe_nghiep")
     private String ngheNghiep;
 
+    @Column(name = "ngay_tham_gia")
+    private Date ngayThamGia;
+
+    @Column(name = "vip")
+    private boolean vip;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
 
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, byte[] anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, byte[] anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
@@ -133,12 +141,11 @@ public class ThanhVien {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-
-    public String getTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
+    public boolean getTinhTrangHonNhan() {
+        return this .tinhTrangHonNhan;
     }
 
-    public void setTinhTrangHonNhan(String tinhTrangHonNhan) {
+    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
@@ -150,35 +157,35 @@ public class ThanhVien {
         this.anhDaiDien = anhDaiDien;
     }
 
-    public int getSoLanCanhcao() {
+    public Integer getSoLanCanhcao() {
         return soLanCanhcao;
     }
 
-    public void setSoLanCanhcao(int soLanCanhcao) {
+    public void setSoLanCanhcao(Integer soLanCanhcao) {
         this.soLanCanhcao = soLanCanhcao;
     }
 
-    public int getXu() {
+    public Integer getXu() {
         return xu;
     }
 
-    public void setXu(int xu) {
+    public void setXu(Integer xu) {
         this.xu = xu;
     }
 
-    public int getLuotThich() {
+    public Integer getLuotThich() {
         return luotThich;
     }
 
-    public void setLuotThich(int luotThich) {
+    public void setLuotThich(Integer luotThich) {
         this.luotThich = luotThich;
     }
 
-    public int getTrangThaiDangNhap() {
+    public Integer getTrangThaiDangNhap() {
         return trangThaiDangNhap;
     }
 
-    public void setTrangThaiDangNhap(int trangThaiDangNhap) {
+    public void setTrangThaiDangNhap(Integer trangThaiDangNhap) {
         this.trangThaiDangNhap = trangThaiDangNhap;
     }
 
@@ -188,6 +195,28 @@ public class ThanhVien {
 
     public void setKhoa(boolean khoa) {
         this.khoa = khoa;
+    }
+
+    public boolean isTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+
+
+    public Date getNgayThamGia() {
+        return ngayThamGia;
+    }
+
+    public void setNgayThamGia(Date ngayThamGia) {
+        this.ngayThamGia = ngayThamGia;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
     }
 
     public String getMucDichThamGia() {
@@ -224,7 +253,7 @@ public class ThanhVien {
                 ", email='" + email + '\'' +
                 ", diaChi='" + diaChi + '\'' +
                 ", tinhTrangHonNhan='" + tinhTrangHonNhan + '\'' +
-                ", anhDaiDien=" + Arrays.toString(anhDaiDien) +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
                 ", soLanCanhcao=" + soLanCanhcao +
                 ", xu=" + xu +
                 ", luotThich=" + luotThich +
@@ -236,3 +265,5 @@ public class ThanhVien {
                 '}';
     }
 }
+
+

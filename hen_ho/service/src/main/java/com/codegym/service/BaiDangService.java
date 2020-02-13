@@ -14,5 +14,9 @@ public interface BaiDangService {
     BaiDang findByIdBaiDang(Integer idBaiDang);
 
     void save(BaiDang baiDang);
+
+    List<BaiDang> findAllByIdHoiNhom(long id);
+
+    void deleteBaiDang(BaiDang baiDang);
 }
 

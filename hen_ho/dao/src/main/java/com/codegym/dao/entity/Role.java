@@ -7,7 +7,6 @@ import java.util.Set;
 @Entity
 @Table(name="role")
 public class Role {
-//    private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id_role")
