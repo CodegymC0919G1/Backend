@@ -8,4 +8,11 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>dao</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.codegym</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -24,7 +24,7 @@ public class ThanhVienServiceImpl implements ThanhVienService {
     }
 
     @Override
-    public ThanhVien getThanhVienById(int id) {
+    public ThanhVien getThanhVienById(long id) {
         return thanhVienRepository.findById(id).orElse(null);
     }
 }

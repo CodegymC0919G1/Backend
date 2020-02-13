@@ -10,5 +10,5 @@ public interface ThanhVienService {
 
     ThanhVien saveThanhVien(ThanhVien thanhVien);
 
-    ThanhVien getThanhVienById(int id);
+    ThanhVien getThanhVienById(long id);
 }
