@@ -118,4 +118,5 @@ public class BaiDang {
     public void setIdHoiNhom(HoiNhom idHoiNhom) {
         this.idHoiNhom = idHoiNhom;
     }
+
 }

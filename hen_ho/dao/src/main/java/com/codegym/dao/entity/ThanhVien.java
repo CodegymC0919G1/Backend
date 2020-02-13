@@ -39,6 +39,7 @@ public class ThanhVien {
     @Column(name = "xu")
     private Integer xu;
 
+
     @Column(name = "luot_thich")
     private Integer luotThich;
 
@@ -47,9 +48,23 @@ public class ThanhVien {
 
     @Column(name = "khoa")
     private boolean khoa;
+
+
+    @Column(name = "muc_dich_tham_gia")
+    private String mucDichThamGia;
+
+    @Column(name = "nghe_nghiep")
+    private String ngheNghiep;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
+
+
+    public ThanhVien() {
+    }
+
+
 
     public int getIdThanhVien() {
         return idThanhVien;
@@ -107,7 +122,6 @@ public class ThanhVien {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
-
     public String getAnhDaiDien() {
         return anhDaiDien;
     }
@@ -156,6 +170,22 @@ public class ThanhVien {
         this.khoa = khoa;
     }
 
+    public String getMucDichThamGia() {
+        return mucDichThamGia;
+    }
+
+    public void setMucDichThamGia(String mucDichThamGia) {
+        this.mucDichThamGia = mucDichThamGia;
+    }
+
+    public String getNgheNghiep() {
+        return ngheNghiep;
+    }
+
+    public void setNgheNghiep(String ngheNghiep) {
+        this.ngheNghiep = ngheNghiep;
+    }
+
     public User getUser() {
         return user;
     }
@@ -165,8 +195,7 @@ public class ThanhVien {
     }
 
 
-    public ThanhVien() {
-    }
+
 
     public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, Boolean tinhTrangHonNhan, String anhDaiDien, Integer soLanCanhcao, Integer xu, Integer luotThich, Integer trangThaiDangNhap, boolean khoa, User user) {
 
@@ -184,4 +213,28 @@ public class ThanhVien {
         this.khoa = khoa;
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "ThanhVien{" +
+                "idThanhVien=" + idThanhVien +
+                ", hoTen='" + hoTen + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", email='" + email + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", tinhTrangHonNhan='" + tinhTrangHonNhan + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", soLanCanhcao=" + soLanCanhcao +
+                ", xu=" + xu +
+                ", luotThich=" + luotThich +
+                ", trangThaiDangNhap=" + trangThaiDangNhap +
+                ", khoa=" + khoa +
+                ", mucDichThamGia='" + mucDichThamGia + '\'' +
+                ", ngheNghiep='" + ngheNghiep + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }
+
+

@@ -13,11 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = {"*"})
 public class BaiDangController {
     @Autowired
     BaiDangService baiDangService;
 
-    @GetMapping("/listbaidang")
+    @GetMapping("/baidang")
     public ResponseEntity<List<BaiDang>> danhsachbaidang(){
         List<BaiDang> priceTickets = baiDangService.findAll();
         return ResponseEntity.ok(priceTickets);
