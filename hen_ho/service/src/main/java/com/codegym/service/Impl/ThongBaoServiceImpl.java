@@ -24,7 +24,7 @@ public class ThongBaoServiceImpl implements ThongBaoService {
     }
 
     @Override
-    public ThongBao getThongBaoById(long id) {
+    public ThongBao getThongBaoById(int id) {
         return thongBaoRepository.findById(id).orElse(null);
     }
 }

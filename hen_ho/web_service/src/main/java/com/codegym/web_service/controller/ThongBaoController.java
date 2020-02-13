@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -17,6 +19,12 @@ public class ThongBaoController {
     @GetMapping("/thongbao")
     public ResponseEntity<List<ThongBao>> danhSachThongBao(){
         List<ThongBao> thongBaos = thongBaoService.getThongBao();
+        Collections.sort(thongBaos, new Comparator<ThongBao>() {
+            @Override
+            public int compare(ThongBao o1, ThongBao o2) {
+                return o2.getThoiGianThongBao().compareTo(o1.getThoiGianThongBao());
+            }
+        });
         return ResponseEntity.ok(thongBaos);
     }
 

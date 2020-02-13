@@ -7,5 +7,5 @@ import java.util.List;
 public interface ThongBaoService {
     List<ThongBao> getThongBao();
     ThongBao saveThongBao(ThongBao thongBao);
-    ThongBao getThongBaoById(long id);
+    ThongBao getThongBaoById(int id);
 }

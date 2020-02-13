@@ -63,7 +63,7 @@ public class UserController {
     @Autowired
     ThanhVienService thanhVienService;
 
-    @GetMapping("/thanhviens/top100")
+    @GetMapping("/top100")
     public List<ThanhVien> top100(){
         List<ThanhVien> thanhViens = thanhVienService.getThanhVien();
         thanhViens.sort(new SortName());

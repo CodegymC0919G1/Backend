@@ -12,8 +12,8 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping("")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api")
 public class ThanhVienController {
     @Autowired
     ThanhVienRepository repository;
