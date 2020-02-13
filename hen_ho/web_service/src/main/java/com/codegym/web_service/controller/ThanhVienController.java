@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
@@ -80,7 +79,6 @@ public class ThanhVienController {
         thanhvien.setAnhDaiDien(file.getBytes());
         thanhVienService.save(thanhvien);
         System.out.println("Image saved");
-
         return thanhvien;
     }
 }

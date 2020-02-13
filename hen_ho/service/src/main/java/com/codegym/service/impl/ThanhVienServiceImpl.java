@@ -10,21 +10,27 @@ import java.util.List;
 
 @Service
 public class ThanhVienServiceImpl implements ThanhVienService {
+
     @Autowired
-    private ThanhVienRepository thanhVienRepository;
-
+    ThanhVienRepository repository;
     @Override
-    public List<ThanhVien> getThanhVien() {
-        return thanhVienRepository.findAll();
+    public List<ThanhVien> findAll() {
+        return repository.findAll();
     }
 
     @Override
-    public ThanhVien saveThanhVien(ThanhVien thanhVien) {
-        return thanhVienRepository.save(thanhVien);
+    public ThanhVien findById(long id) {
+        return repository.findById(id).orElse(null);
     }
 
     @Override
-    public ThanhVien getThanhVienById(int id) {
-        return thanhVienRepository.findById(id).orElse(null);
+    public void save(ThanhVien thanhvien) {
+        repository.save(thanhvien);
+
+    }
+
+    @Override
+    public ThanhVien findByEmailIs(String email) {
+        return repository.findByEmailIs(email);
     }
 }
