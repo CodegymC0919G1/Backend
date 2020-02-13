@@ -23,6 +23,7 @@ public class ThanhVienServiceImpl implements ThanhVienService {
         return repository.findById(id).orElse(null);
     }
 
+
     @Override
     public void save(ThanhVien thanhvien) {
         repository.save(thanhvien);
