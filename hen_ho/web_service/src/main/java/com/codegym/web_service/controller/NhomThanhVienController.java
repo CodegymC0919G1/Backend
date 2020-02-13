@@ -25,10 +25,5 @@ public class NhomThanhVienController {
     public List<NhomThanhVien> listAllNhomThanhVien() {
         return nhomThanhVienService.findAll();
     }
-    @GetMapping("/nhomthanhvien/{id}")
-    public ResponseEntity<DetailNhomThanhVienDTO> getNhomThanhVienById(@PathVariable(value = "id") Long idNhomThanhVien)
-    {
-        DetailNhomThanhVienDTO detailNhomThanhVienDTO = nhomThanhVienService.findById(idNhomThanhVien);
-        return ResponseEntity.ok().body(detailNhomThanhVienDTO);
-    }
+
 }

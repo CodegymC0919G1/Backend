@@ -65,42 +65,6 @@ public class ThanhVien {
     @Column(name = "nghe_nghiep")
     private String ngheNghiep;
 
-    public boolean isTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
-    }
-
-    public String getMucDichThamGia() {
-        return mucDichThamGia;
-    }
-
-    public void setMucDichThamGia(String mucDichThamGia) {
-        this.mucDichThamGia = mucDichThamGia;
-    }
-
-    public String getNgheNghiep() {
-        return ngheNghiep;
-    }
-
-    public void setNgheNghiep(String ngheNghiep) {
-        this.ngheNghiep = ngheNghiep;
-    }
-
-    public Date getNgayThamGia() {
-        return ngayThamGia;
-    }
-
-    public void setNgayThamGia(Date ngayThamGia) {
-        this.ngayThamGia = ngayThamGia;
-    }
-
-    public boolean isVip() {
-        return vip;
-    }
-
-    public void setVip(boolean vip) {
-        this.vip = vip;
-    }
-
     @Column(name = "ngay_tham_gia")
     private Date ngayThamGia;
 
@@ -232,6 +196,44 @@ public class ThanhVien {
         this.khoa = khoa;
     }
 
+    public boolean isTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+
+
+    public Date getNgayThamGia() {
+        return ngayThamGia;
+    }
+
+    public void setNgayThamGia(Date ngayThamGia) {
+        this.ngayThamGia = ngayThamGia;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
+    }
+
+    public String getMucDichThamGia() {
+        return mucDichThamGia;
+    }
+
+    public void setMucDichThamGia(String mucDichThamGia) {
+        this.mucDichThamGia = mucDichThamGia;
+    }
+
+    public String getNgheNghiep() {
+        return ngheNghiep;
+    }
+
+    public void setNgheNghiep(String ngheNghiep) {
+        this.ngheNghiep = ngheNghiep;
+    }
+
     public User getUser() {
         return user;
     }
@@ -240,5 +242,27 @@ public class ThanhVien {
         this.user = user;
     }
 
-
+    @Override
+    public String toString() {
+        return "ThanhVien{" +
+                "idThanhVien=" + idThanhVien +
+                ", hoTen='" + hoTen + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", email='" + email + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", tinhTrangHonNhan='" + tinhTrangHonNhan + '\'' +
+                ", anhDaiDien='" + anhDaiDien + '\'' +
+                ", soLanCanhcao=" + soLanCanhcao +
+                ", xu=" + xu +
+                ", luotThich=" + luotThich +
+                ", trangThaiDangNhap=" + trangThaiDangNhap +
+                ", khoa=" + khoa +
+                ", mucDichThamGia='" + mucDichThamGia + '\'' +
+                ", ngheNghiep='" + ngheNghiep + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }
+
+

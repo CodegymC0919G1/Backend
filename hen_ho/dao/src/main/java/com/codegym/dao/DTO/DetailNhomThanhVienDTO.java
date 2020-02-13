@@ -1,8 +1,19 @@
 package com.codegym.dao.DTO;
 
+import java.util.List;
+
 public class DetailNhomThanhVienDTO {
     private String hoTenAdmin;
-    private String hoTenThanhVien;
+    private List hoTenThanhVien;
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getHoTenAdmin() {
         return hoTenAdmin;
@@ -12,11 +23,11 @@ public class DetailNhomThanhVienDTO {
         this.hoTenAdmin = hoTenAdmin;
     }
 
-    public String getHoTenThanhVien() {
+    public List getHoTenThanhVien() {
         return hoTenThanhVien;
     }
 
-    public void setHoTenThanhVien(String hoTenThanhVien) {
+    public void setHoTenThanhVien(List<String> hoTenThanhVien) {
         this.hoTenThanhVien = hoTenThanhVien;
     }
 }
