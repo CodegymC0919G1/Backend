@@ -6,8 +6,10 @@ import com.codegym.dao.DTO.UserDTO;
 import com.codegym.dao.entity.User;
 import com.codegym.service.Impl.UserServiceImpl;
 import com.codegym.service.UserService;
+import com.codegym.web_service.security.JwtRequestFilter;
 import com.codegym.web_service.security.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +19,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -32,11 +33,13 @@ public class UserController {
     UserServiceImpl userServiceImpl;
     @Autowired
     UserService userService;
+    @Autowired
+    JwtRequestFilter jwtRequestFilter;
 
     @GetMapping("/test")
     public ResponseEntity<?> sayHello() {
         System.out.println("abc");
-        return new ResponseEntity<>("Welcome to my website", HttpStatus.OK);
+        return new ResponseEntity<>("ok", HttpStatus.OK);
     }
 
     @GetMapping("/users")

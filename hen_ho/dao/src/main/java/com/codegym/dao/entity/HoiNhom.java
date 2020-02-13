@@ -16,7 +16,7 @@ public class HoiNhom {
     private String tenHoiNhom;
 
     @Column(name = "ngay_thanh_lap")
-    private String ngayThanhLap;
+    private Date ngayThanhLap;
 
     @Column(name = "so_thanh_vien")
     private int soThanhVien;
@@ -24,11 +24,15 @@ public class HoiNhom {
     @Column(name = "so_lan_canh_cao")
     private int soLanCanhCao;
 
-    public HoiNhom(String tenHoiNhom, String ngayThanhLap, int soThanhVien, int soLanCanhCao) {
+//    @OneToMany(targetEntity = NhomThanhVien.class)
+//    private List<NhomThanhVien> nhomThanhViens;
+
+    public HoiNhom(String tenHoiNhom, Date ngayThanhLap, int soThanhVien, int soLanCanhCao) {
         this.tenHoiNhom = tenHoiNhom;
         this.ngayThanhLap = ngayThanhLap;
         this.soThanhVien = soThanhVien;
         this.soLanCanhCao = soLanCanhCao;
+       // this.nhomThanhViens = nhomThanhViens;
     }
 
 
@@ -48,11 +52,11 @@ public class HoiNhom {
         this.tenHoiNhom = tenHoiNhom;
     }
 
-    public String getNgayThanhLap() {
+    public Date getNgayThanhLap() {
         return ngayThanhLap;
     }
 
-    public void setNgayThanhLap(String ngayThanhLap) {
+    public void setNgayThanhLap(Date ngayThanhLap) {
         this.ngayThanhLap = ngayThanhLap;
     }
 
@@ -72,7 +76,15 @@ public class HoiNhom {
         this.soLanCanhCao = soLanCanhCao;
     }
 
+//    public List<NhomThanhVien> getNhomThanhViens() {
+//        return nhomThanhViens;
+//    }
+//
+//    public void setNhomThanhViens(List<NhomThanhVien> nhomThanhViens) {
+//        this.nhomThanhViens = nhomThanhViens;
+//    }
     public HoiNhom() {
     }
+
 
 }

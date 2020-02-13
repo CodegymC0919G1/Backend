@@ -1,6 +1,7 @@
 package com.codegym.web_service.controller;
 
 
+import com.codegym.dao.DTO.JwtRequest;
 import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.repository.UserRepository;
 import com.codegym.service.ThanhVienService;
@@ -19,6 +20,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class ThanhVienController {
+
     @Autowired
     ThanhVienService thanhVienService;
 

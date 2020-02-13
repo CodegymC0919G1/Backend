@@ -2,6 +2,8 @@ package com.codegym.dao.entity;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="thu")
@@ -18,7 +20,7 @@ public class Thu {
     private String noiDung;
 
     @Column(name = "thoi_gian_gui")
-    private Date thoiGianGui;
+    private Timestamp thoiGianGui;
 
     @Column(name = "xem")
     private boolean xem;
@@ -58,11 +60,11 @@ public class Thu {
         this.noiDung = noiDung;
     }
 
-    public Date getThoiGianGui() {
+    public Timestamp getThoiGianGui() {
         return thoiGianGui;
     }
 
-    public void setThoiGianGui(Date thoiGianGui) {
+    public void setThoiGianGui(Timestamp thoiGianGui) {
         this.thoiGianGui = thoiGianGui;
     }
 
@@ -101,7 +103,7 @@ public class Thu {
     public Thu() {
     }
 
-    public Thu(String tieuDe, String noiDung, Date thoiGianGui, boolean xem, boolean xoa, ThanhVien thanhVienNhan, ThanhVien thanhVienGui) {
+    public Thu(String tieuDe, String noiDung, Timestamp thoiGianGui, boolean xem, boolean xoa, ThanhVien thanhVienNhan, ThanhVien thanhVienGui) {
         this.tieuDe = tieuDe;
         this.noiDung = noiDung;
         this.thoiGianGui = thoiGianGui;

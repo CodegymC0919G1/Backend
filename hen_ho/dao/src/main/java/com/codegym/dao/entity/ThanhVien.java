@@ -50,6 +50,7 @@ public class ThanhVien {
     @Column(name = "xu")
     private Integer xu;
 
+
     @Column(name = "luot_thich")
     private Integer luotThich;
 
