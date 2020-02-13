@@ -1,15 +1,25 @@
 package com.codegym.dao.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Date;
 
+
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "thanh_vien")
 public class ThanhVien {
     @Id
     @Column(name = "id_thanh_vien")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idThanhVien;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idThanhVien;
 
     @Column(name = "ho_ten")
     private String hoTen;
@@ -28,8 +38,9 @@ public class ThanhVien {
 
     @Column(name = "tinh_trang_hon_nhan")
 
-    private Boolean tinhTrangHonNhan;
+    private boolean tinhTrangHonNhan;
 
+    @Lob
     @Column(name = "anh_dai_dien")
     private byte[] anhDaiDien;
 
@@ -55,19 +66,39 @@ public class ThanhVien {
     @Column(name = "nghe_nghiep")
     private String ngheNghiep;
 
+    @Column(name = "ngay_tham_gia")
+    private Date ngayThamGia;
+
+    @Column(name = "vip")
+    private boolean vip;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
 
-    public ThanhVien() {
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, byte[] anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
+        this.hoTen = hoTen;
+        this.gioiTinh = gioiTinh;
+        this.ngaySinh = ngaySinh;
+        this.email = email;
+        this.diaChi = diaChi;
+        this.tinhTrangHonNhan = tinhTrangHonNhan;
+        this.anhDaiDien = anhDaiDien;
+        this.soLanCanhcao = soLanCanhcao;
+        this.xu = xu;
+        this.luotThich = luotThich;
+        this.trangThaiDangNhap = trangThaiDangNhap;
+        this.khoa = khoa;
+        this.mucDichThamGia = mucDichThamGia;
+        this.ngheNghiep = ngheNghiep;
+        this.user = user;
     }
 
-
-    public long getIdThanhVien() {
+    public Long getIdThanhVien() {
         return idThanhVien;
     }
 
-    public void setIdThanhVien(long idThanhVien) {
+    public void setIdThanhVien(Long idThanhVien) {
         this.idThanhVien = idThanhVien;
     }
 
@@ -110,12 +141,11 @@ public class ThanhVien {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-
-    public Boolean getTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
+    public boolean getTinhTrangHonNhan() {
+        return this .tinhTrangHonNhan;
     }
 
-    public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
+    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
@@ -165,6 +195,28 @@ public class ThanhVien {
 
     public void setKhoa(boolean khoa) {
         this.khoa = khoa;
+    }
+
+    public boolean isTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+
+
+    public Date getNgayThamGia() {
+        return ngayThamGia;
+    }
+
+    public void setNgayThamGia(Date ngayThamGia) {
+        this.ngayThamGia = ngayThamGia;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
     }
 
     public String getMucDichThamGia() {

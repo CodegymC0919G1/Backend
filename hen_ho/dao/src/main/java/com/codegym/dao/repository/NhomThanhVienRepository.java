@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface NhomThanhVienRepository extends JpaRepository<NhomThanhVien,Long> {
     List<NhomThanhVien> findAllByHoiNhom(HoiNhom hoiNhom);
+    long countByHoiNhom(HoiNhom hoiNhom);
 }

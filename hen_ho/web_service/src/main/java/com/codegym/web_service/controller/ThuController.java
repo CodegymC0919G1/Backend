@@ -49,13 +49,13 @@ public class ThuController {
 
 	@GetMapping("/nguoinhan/{id}")
 	public ResponseEntity<List<Thu>> getNguoiNhan(@PathVariable("id") Long id) {
-		List<Thu> allnguoiNhan = thuService.findThanhVienNhan(thanhVienService.getThanhVienById(id));
+		List<Thu> allnguoiNhan = thuService.findThanhVienNhan(thanhVienService.findById(id));
 		return new ResponseEntity<>(allnguoiNhan, HttpStatus.OK);
 	}
 
 	@GetMapping("/nguoigui/{id}")
 	public ResponseEntity<List<Thu>> getNguoiGui(@PathVariable("id") Long id) {
-		List<Thu> allnguoiGui = thuService.findThanhVienGui(thanhVienService.getThanhVienById(id));
+		List<Thu> allnguoiGui = thuService.findThanhVienGui(thanhVienService.findById(id));
 		return new ResponseEntity<>(allnguoiGui, HttpStatus.OK);
 	}
 

@@ -76,6 +76,15 @@ public class HoiNhom {
         this.soLanCanhCao = soLanCanhCao;
     }
 
+//    public List<NhomThanhVien> getNhomThanhViens() {
+//        return nhomThanhViens;
+//    }
+//
+//    public void setNhomThanhViens(List<NhomThanhVien> nhomThanhViens) {
+//        this.nhomThanhViens = nhomThanhViens;
+//    }
     public HoiNhom() {
     }
+
+
 }

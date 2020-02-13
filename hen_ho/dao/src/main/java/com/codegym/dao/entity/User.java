@@ -20,7 +20,6 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-
     @ManyToMany
     @JoinTable(
             name = "user_role",
@@ -36,7 +35,6 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
-
 
     public User() {
     }

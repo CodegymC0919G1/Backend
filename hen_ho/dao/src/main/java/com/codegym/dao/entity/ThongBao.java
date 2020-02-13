@@ -11,6 +11,9 @@ public class ThongBao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idThongBao;
 
+    @Column(name = "tieu_de")
+    private String tieuDe;
+
     @Column(name = "noi_dung")
     private String noiDung;
 
@@ -41,12 +44,15 @@ public class ThongBao {
         this.thoiGianThongBao = thoiGianThongBao;
     }
 
-    public ThongBao() {
+    public String getTieuDe() {
+        return tieuDe;
     }
 
-    public ThongBao(String noiDung, Date thoiGianThongBao) {
-        this.noiDung = noiDung;
-        this.thoiGianThongBao = thoiGianThongBao;
+    public void setTieuDe(String tieuDe) {
+        this.tieuDe = tieuDe;
+    }
+
+    public ThongBao() {
     }
 
 }

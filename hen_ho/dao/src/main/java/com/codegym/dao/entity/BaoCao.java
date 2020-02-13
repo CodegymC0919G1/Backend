@@ -9,7 +9,7 @@ public class BaoCao {
     @Id
     @Column(name = "id_bao_cao")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idBaoCao;
+    private long idBaoCao;
 
     @Column(name = "thoi_gian_bao_cao")
     private Date thoiGianBaoCao;
@@ -28,11 +28,11 @@ public class BaoCao {
     @JoinColumn(name = "id_nguoi_bi_bao_cao")
     private ThanhVien thanhVienBiBaoCao;
 
-    public int getIdBaoCao() {
+    public long getIdBaoCao() {
         return idBaoCao;
     }
 
-    public void setIdBaoCao(int idBaoCao) {
+    public void setIdBaoCao(long idBaoCao) {
         this.idBaoCao = idBaoCao;
     }
 
