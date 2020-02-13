@@ -1,13 +1,15 @@
 package com.codegym.web_service.controller;
 
-import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.entity.Thu;
 import com.codegym.service.ThanhVienService;
 import com.codegym.service.ThuService;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 import java.util.List;
 
 @RequestMapping("/thu")
@@ -32,25 +34,34 @@ public class ThuController {
 	public Thu getThu(@PathVariable("id") int id) {
 		return thuService.findById(id);
 	}
+
 	//Taomoithu
 	@PostMapping("/taomoithu")
 	public void createThu(@RequestBody Thu thu) {
 		thuService.save(thu);
 	}
+
 	// Xóa thư
 	@DeleteMapping("/delete/{id}")
-	public  void  deleteThu(@PathVariable("id") int id){
+	public void deleteThu(@PathVariable("id") int id) {
 		thuService.delete(id);
 	}
 
 	@GetMapping("/nguoinhan/{id}")
-	public ResponseEntity<List<Thu>> getNguoiNhan(@PathVariable("id") int id){
+	public ResponseEntity<List<Thu>> getNguoiNhan(@PathVariable("id") Long id) {
 		List<Thu> allnguoiNhan = thuService.findThanhVienNhan(thanhVienService.getThanhVienById(id));
 		return new ResponseEntity<>(allnguoiNhan, HttpStatus.OK);
 	}
+
 	@GetMapping("/nguoigui/{id}")
-	public ResponseEntity<List<Thu>> getNguoiGui(@PathVariable("id") int id){
+	public ResponseEntity<List<Thu>> getNguoiGui(@PathVariable("id") Long id) {
 		List<Thu> allnguoiGui = thuService.findThanhVienGui(thanhVienService.getThanhVienById(id));
 		return new ResponseEntity<>(allnguoiGui, HttpStatus.OK);
+	}
+
+	@GetMapping("/xem/{id}")
+	public ResponseEntity<List<Thu>> getAllThuXem(@PathVariable("id") Long id) {
+		List<Thu> allthu = thuService.getAllThu();
+		return new ResponseEntity<List<Thu>>(allthu, HttpStatus.OK);
 	}
 }

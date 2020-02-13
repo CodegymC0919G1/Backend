@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface ThuRepository extends JpaRepository<Thu,Integer> {
 	List<Thu> findAllByThanhVienGui(ThanhVien thanhVien);
-
+	List<Thu> findAllByXemIsTrueAndThanhVienNhan(Long id);
+	List<Thu> findAllByXemIsFalseAndThanhVienNhan(Long id);
 	List<Thu> findAllByThanhVienNhan(ThanhVien thanhVien);
 }

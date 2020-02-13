@@ -1,4 +1,4 @@
-package com.codegym.service.impl;
+package com.codegym.service.Impl;
 
 import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.repository.ThanhVienRepository;
@@ -10,21 +10,22 @@ import java.util.List;
 
 @Service
 public class ThanhVienServiceImpl implements ThanhVienService {
-    @Autowired
-    private ThanhVienRepository thanhVienRepository;
+	@Autowired
+	private ThanhVienRepository thanhVienRepository;
 
-    @Override
-    public List<ThanhVien> getThanhVien() {
-        return thanhVienRepository.findAll();
-    }
+	@Override
+	public List<ThanhVien> getThanhVien() {
+		return thanhVienRepository.findAll();
+	}
 
-    @Override
-    public ThanhVien saveThanhVien(ThanhVien thanhVien) {
-        return thanhVienRepository.save(thanhVien);
-    }
+	@Override
+	public ThanhVien saveThanhVien(ThanhVien thanhVien) {
+		return thanhVienRepository.save(thanhVien);
+	}
 
-    @Override
-    public ThanhVien getThanhVienById(long id) {
-        return thanhVienRepository.findById(id).orElse(null);
-    }
+	@Override
+
+	public ThanhVien getThanhVienById(Long id) {
+		return thanhVienRepository.findById(id).orElse(null);
+	}
 }

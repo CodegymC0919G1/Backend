@@ -17,4 +17,6 @@ public interface ThuService {
 	List<Thu>  findThanhVienGui(ThanhVien thanhVien);
 
 	List<Thu> findThanhVienNhan(ThanhVien thanhVien);
+	List<Thu> findThuDaXem(Long id);
+	List<Thu> findThuChuaXem(Long id);
 }

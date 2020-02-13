@@ -14,5 +14,6 @@ public interface BaiDangService {
     BaiDang findByIdBaiDang(Integer idBaiDang);
 
     void save(BaiDang baiDang);
+
 }
 

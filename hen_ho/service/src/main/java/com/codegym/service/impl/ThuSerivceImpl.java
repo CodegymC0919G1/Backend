@@ -46,4 +46,14 @@ public class ThuSerivceImpl implements ThuService {
 	public List<Thu> findThanhVienNhan(ThanhVien thanhVien) {
 		return thuRepository.findAllByThanhVienNhan(thanhVien);
 	}
+
+	@Override
+	public List<Thu> findThuDaXem(Long id) {
+		return thuRepository.findAllByXemIsTrueAndThanhVienNhan(id);
+	}
+
+	@Override
+	public List<Thu> findThuChuaXem(Long id) {
+		return thuRepository.findAllByXemIsFalseAndThanhVienNhan(id);
+	}
 }
