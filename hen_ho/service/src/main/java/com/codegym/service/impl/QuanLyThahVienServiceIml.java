@@ -1,11 +1,10 @@
-package com.codegym.service.Impl;
+package com.codegym.service.impl;
 
 import com.codegym.dao.DTO.QuanLyThanhVienDTO;
 import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.repository.QuanLyThanhVienRepository;
 import com.codegym.service.QuanLyThanhVienService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

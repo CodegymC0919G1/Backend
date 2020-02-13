@@ -2,7 +2,7 @@ package com.codegym.web_service.controller;
 
 import com.codegym.dao.DTO.QuanLyThanhVienDTO;
 import com.codegym.dao.entity.ThanhVien;
-import com.codegym.service.Impl.QuanLyThahVienServiceIml;
+import com.codegym.service.impl.QuanLyThahVienServiceIml;
 import com.codegym.service.QuanLyThanhVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
