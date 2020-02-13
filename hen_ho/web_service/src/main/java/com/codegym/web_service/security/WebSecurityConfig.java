@@ -30,9 +30,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        // configure AuthenticationManager so that it knows from where to load
-        // user for matching credentials
-        // Use BCryptPasswordEncoder
         auth.userDetailsService(userDetailService).passwordEncoder(passwordEncoder());
     }
 
@@ -55,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login","/test","/users").permitAll()
-                .antMatchers("/user").hasAnyRole("USER","ADMIN")
+                .antMatchers("/login", "/thongbao/**", "/thanhviens/**").permitAll()
+                .antMatchers("/users").access("hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and().cors();
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

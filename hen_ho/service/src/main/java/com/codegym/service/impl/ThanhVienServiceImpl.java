@@ -1,4 +1,4 @@
-package com.codegym.service.impl;
+package com.codegym.service.Impl;
 
 import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.repository.ThanhVienRepository;
@@ -24,7 +24,7 @@ public class ThanhVienServiceImpl implements ThanhVienService {
     }
 
     @Override
-    public ThanhVien getThanhVienById(int id) {
+    public ThanhVien getThanhVienById(long id) {
         return thanhVienRepository.findById(id).orElse(null);
     }
 }
