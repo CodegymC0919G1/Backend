@@ -24,7 +24,11 @@ public class ThanhVienServiceImpl implements ThanhVienService {
     }
 
     @Override
+<<<<<<< HEAD
     public ThanhVien getThanhVienById(long id) {
+=======
+    public ThanhVien getThanhVienById(Long id) {
+>>>>>>> d45117005d6424544f19497ab5703c65a1e66a7a
         return thanhVienRepository.findById(id).orElse(null);
     }
 }

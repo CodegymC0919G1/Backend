@@ -27,7 +27,6 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-
     private Boolean tinhTrangHonNhan;
 
     @Column(name = "anh_dai_dien")
@@ -59,10 +58,10 @@ public class ThanhVien {
     @JoinColumn(name = "id_user")
     private User user;
 
-    public ThanhVien() {
+    public boolean isTinhTrangHonNhan() {
+        return this.tinhTrangHonNhan;
     }
-
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, String tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
@@ -127,9 +126,8 @@ public class ThanhVien {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-
-    public Boolean getTinhTrangHonNhan() {
-        return tinhTrangHonNhan;
+    public boolean getTinhTrangHonNhan() {
+        return this .tinhTrangHonNhan;
     }
 
     public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
@@ -168,10 +166,6 @@ public class ThanhVien {
         this.luotThich = luotThich;
     }
 
-    public Integer getTrangThaiDangNhap() {
-        return trangThaiDangNhap;
-    }
-
     public void setTrangThaiDangNhap(Integer trangThaiDangNhap) {
         this.trangThaiDangNhap = trangThaiDangNhap;
     }
@@ -180,32 +174,8 @@ public class ThanhVien {
         return khoa;
     }
 
-    public void setKhoa(boolean khoa) {
-        this.khoa = khoa;
-    }
-
-    public String getMucDichThamGia() {
-        return mucDichThamGia;
-    }
-
     public void setMucDichThamGia(String mucDichThamGia) {
         this.mucDichThamGia = mucDichThamGia;
-    }
-
-    public String getNgheNghiep() {
-        return ngheNghiep;
-    }
-
-    public void setNgheNghiep(String ngheNghiep) {
-        this.ngheNghiep = ngheNghiep;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     @Override
@@ -230,5 +200,5 @@ public class ThanhVien {
                 '}';
     }
 }
-}
+
 
