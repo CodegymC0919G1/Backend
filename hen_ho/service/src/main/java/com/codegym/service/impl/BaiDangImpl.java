@@ -22,6 +22,7 @@ public class BaiDangImpl implements BaiDangService {
 
     @Override
     public List<BaiDang> findByThanhVienDang(ThanhVien thanhVienDang) {
+        //aaaa
         return baiDangRepository.findByThanhVienDang(thanhVienDang);
     }
 
