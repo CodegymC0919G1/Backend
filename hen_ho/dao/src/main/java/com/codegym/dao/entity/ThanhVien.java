@@ -37,7 +37,6 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-
     private boolean tinhTrangHonNhan;
 
     @Lob

@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login", "/thongbao/**", "/qlthanhvien/**").permitAll()
+                .antMatchers("/login", "/thongbao/**", "/qlthanhvien/**","/api/thanhviens/**").permitAll()
                 .antMatchers("/users").access("hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and().cors();
