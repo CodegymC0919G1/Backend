@@ -1,14 +1,4 @@
 
-//package com.codegym.web_service.security;
-//
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-//
-//@Configuration
-//@EnableWebSecurity
-//public class WebSecurityConfig  {
-//}
-
 package com.codegym.web_service.security;
 
 import com.codegym.service.Impl.UserServiceImpl;
@@ -40,9 +30,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        // configure AuthenticationManager so that it knows from where to load
-        // user for matching credentials
-        // Use BCryptPasswordEncoder
         auth.userDetailsService(userDetailService).passwordEncoder(passwordEncoder());
     }
 
@@ -65,8 +52,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login","/test","/users","/qlthanhvien/**","/baocao/**").permitAll()
-                .antMatchers("/user").hasAnyRole("USER","ADMIN")
+                .antMatchers("/login", "/thongbao/**", "/qlthanhvien/**").permitAll()
+                .antMatchers("/users").access("hasAnyRole('ROLE_MEMBER', 'ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and().cors();
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

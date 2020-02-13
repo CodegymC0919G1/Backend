@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserDetailsService {
 
     @Autowired
     UserRepository userRepository;
-    @Autowired
+    @Autowired(required=false)
     private PasswordEncoder bcryptEncoder;
 
     @Override

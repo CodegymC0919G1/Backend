@@ -20,7 +20,6 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-
     @ManyToMany
     @JoinTable(
             name = "user_role",
@@ -37,10 +36,8 @@ public class User {
         this.roles = roles;
     }
 
-
     public User() {
     }
-
 
     public int getIdUser() {
         return idUser;

@@ -3,8 +3,11 @@ package com.codegym.web_service.controller;
 
 import com.codegym.dao.DTO.JwtResponse;
 import com.codegym.dao.DTO.UserDTO;
+import com.codegym.dao.entity.SortName;
+import com.codegym.dao.entity.ThanhVien;
 import com.codegym.dao.entity.User;
 import com.codegym.service.Impl.UserServiceImpl;
+import com.codegym.service.ThanhVienService;
 import com.codegym.service.UserService;
 import com.codegym.web_service.security.JwtRequestFilter;
 import com.codegym.web_service.security.JwtTokenUtil;
@@ -57,6 +60,16 @@ public class UserController {
         UserDetails userDetails = userServiceImpl
                 .loadUserByUsername(authentication.getName());
         String jwtToken=jwtTokenUtil.generateToken(userDetails);
-        return ResponseEntity.ok( new JwtResponse(jwtToken));
+        return ResponseEntity.ok( new JwtResponse(jwtToken,userDetails.getUsername(),userDetails.getAuthorities()));
+    }
+
+    @Autowired
+    ThanhVienService thanhVienService;
+
+    @GetMapping("/top100")
+    public List<ThanhVien> top100(){
+        List<ThanhVien> thanhViens = thanhVienService.findAll();
+        thanhViens.sort(new SortName());
+        return thanhViens;
     }
 }
