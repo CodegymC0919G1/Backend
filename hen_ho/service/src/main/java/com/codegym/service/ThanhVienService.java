@@ -1,11 +1,12 @@
 package com.codegym.service;
 
 import com.codegym.dao.entity.ThanhVien;
+
 import java.util.List;
 
-
 public interface ThanhVienService {
-    List<ThanhVien> getThanhVien();
-    ThanhVien saveThanhVien(ThanhVien thanhVien);
-    ThanhVien getThanhVienById(Long id);
+    List<ThanhVien> findAll();
+    ThanhVien findById(long id);
+    void save (ThanhVien thanhvien);
+    ThanhVien findByEmailIs(String email);
 }

@@ -41,6 +41,7 @@ public class User {
     public User() {
     }
 
+
     public int getIdUser() {
         return idUser;
     }

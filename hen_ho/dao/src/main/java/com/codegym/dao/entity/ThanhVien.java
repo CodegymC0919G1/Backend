@@ -1,15 +1,25 @@
 package com.codegym.dao.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.sql.Date;
 
+
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "thanh_vien")
 public class ThanhVien {
     @Id
     @Column(name = "id_thanh_vien")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idThanhVien;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idThanhVien;
 
     @Column(name = "ho_ten")
     private String hoTen;
@@ -27,17 +37,18 @@ public class ThanhVien {
     private String diaChi;
 
     @Column(name = "tinh_trang_hon_nhan")
-    private Boolean tinhTrangHonNhan;
 
+    private boolean tinhTrangHonNhan;
+
+    @Lob
     @Column(name = "anh_dai_dien")
-    private String anhDaiDien;
+    private byte[] anhDaiDien;
 
     @Column(name = "so_lan_canh_cao")
     private Integer soLanCanhcao;
 
     @Column(name = "xu")
     private Integer xu;
-
 
     @Column(name = "luot_thich")
     private Integer luotThich;
@@ -54,14 +65,53 @@ public class ThanhVien {
     @Column(name = "nghe_nghiep")
     private String ngheNghiep;
 
+    public boolean isTinhTrangHonNhan() {
+        return tinhTrangHonNhan;
+    }
+
+    public String getMucDichThamGia() {
+        return mucDichThamGia;
+    }
+
+    public void setMucDichThamGia(String mucDichThamGia) {
+        this.mucDichThamGia = mucDichThamGia;
+    }
+
+    public String getNgheNghiep() {
+        return ngheNghiep;
+    }
+
+    public void setNgheNghiep(String ngheNghiep) {
+        this.ngheNghiep = ngheNghiep;
+    }
+
+    public Date getNgayThamGia() {
+        return ngayThamGia;
+    }
+
+    public void setNgayThamGia(Date ngayThamGia) {
+        this.ngayThamGia = ngayThamGia;
+    }
+
+    public boolean isVip() {
+        return vip;
+    }
+
+    public void setVip(boolean vip) {
+        this.vip = vip;
+    }
+
+    @Column(name = "ngay_tham_gia")
+    private Date ngayThamGia;
+
+    @Column(name = "vip")
+    private boolean vip;
+
     @OneToOne
     @JoinColumn(name = "id_user")
     private User user;
 
-    public boolean isTinhTrangHonNhan() {
-        return this.tinhTrangHonNhan;
-    }
-    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, String anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
+    public ThanhVien(String hoTen, String gioiTinh, Date ngaySinh, String email, String diaChi, boolean tinhTrangHonNhan, byte[] anhDaiDien, int soLanCanhcao, int xu, int luotThich, int trangThaiDangNhap, boolean khoa, String mucDichThamGia, String ngheNghiep, User user) {
         this.hoTen = hoTen;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
@@ -79,11 +129,11 @@ public class ThanhVien {
         this.user = user;
     }
 
-    public int getIdThanhVien() {
+    public Long getIdThanhVien() {
         return idThanhVien;
     }
 
-    public void setIdThanhVien(int idThanhVien) {
+    public void setIdThanhVien(Long idThanhVien) {
         this.idThanhVien = idThanhVien;
     }
 
@@ -130,15 +180,15 @@ public class ThanhVien {
         return this .tinhTrangHonNhan;
     }
 
-    public void setTinhTrangHonNhan(Boolean tinhTrangHonNhan) {
+    public void setTinhTrangHonNhan(boolean tinhTrangHonNhan) {
         this.tinhTrangHonNhan = tinhTrangHonNhan;
     }
 
-    public String getAnhDaiDien() {
+    public byte[] getAnhDaiDien() {
         return anhDaiDien;
     }
 
-    public void setAnhDaiDien(String anhDaiDien) {
+    public void setAnhDaiDien(byte[] anhDaiDien) {
         this.anhDaiDien = anhDaiDien;
     }
 
@@ -166,6 +216,10 @@ public class ThanhVien {
         this.luotThich = luotThich;
     }
 
+    public Integer getTrangThaiDangNhap() {
+        return trangThaiDangNhap;
+    }
+
     public void setTrangThaiDangNhap(Integer trangThaiDangNhap) {
         this.trangThaiDangNhap = trangThaiDangNhap;
     }
@@ -174,31 +228,17 @@ public class ThanhVien {
         return khoa;
     }
 
-    public void setMucDichThamGia(String mucDichThamGia) {
-        this.mucDichThamGia = mucDichThamGia;
+    public void setKhoa(boolean khoa) {
+        this.khoa = khoa;
     }
 
-    @Override
-    public String toString() {
-        return "ThanhVien{" +
-                "idThanhVien=" + idThanhVien +
-                ", hoTen='" + hoTen + '\'' +
-                ", gioiTinh='" + gioiTinh + '\'' +
-                ", ngaySinh=" + ngaySinh +
-                ", email='" + email + '\'' +
-                ", diaChi='" + diaChi + '\'' +
-                ", tinhTrangHonNhan='" + tinhTrangHonNhan + '\'' +
-                ", anhDaiDien='" + anhDaiDien + '\'' +
-                ", soLanCanhcao=" + soLanCanhcao +
-                ", xu=" + xu +
-                ", luotThich=" + luotThich +
-                ", trangThaiDangNhap=" + trangThaiDangNhap +
-                ", khoa=" + khoa +
-                ", mucDichThamGia='" + mucDichThamGia + '\'' +
-                ", ngheNghiep='" + ngheNghiep + '\'' +
-                ", user=" + user +
-                '}';
+    public User getUser() {
+        return user;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
 }
-
-
